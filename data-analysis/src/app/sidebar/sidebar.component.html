@@ -1,3 +1,16 @@
-<p>
-  sidebar works!
-</p>
+<div>
+  <nav>
+    <ul>
+      <li>
+        <a routerLink="" [class.activated]="currentUrl == '/'">
+         Main
+        </a>
+      </li>
+      <li>
+          <a routerLink="analysis" [class.activated]="currentUrl == '/analysis'">
+            Analysis
+          </a>
+        </li>
+    </ul>
+  </nav>
+</div>
