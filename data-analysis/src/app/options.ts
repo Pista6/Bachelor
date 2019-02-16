@@ -5,6 +5,6 @@ export class Options {
       public analysisFunction: string,
       public startDate: string,
       public endDate: string
-    ) {  }
+    ) {}
   
   }
