@@ -1,0 +1,13 @@
+.options-div{
+    margin-left: 70px;
+    /* text-align: center; */
+    border: 2px solid black;
+}
+
+.mat-radio-button ~ .mat-radio-button {
+    margin-left: 16px;
+  }
+
+  .label-from, .label-to{
+      padding-right: 10px;
+  }

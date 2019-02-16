@@ -1,1 +1,16 @@
-<mat-checkbox>Check me!</mat-checkbox>
+<div class="sidebar">
+    <nav>
+        <ul>
+            <li>
+                <a routerLink="" [class.activated]="currentUrl == '/'">
+                    Statistika
+                </a>
+            </li>
+            <li>
+                <a routerLink="analysis" [class.activated]="currentUrl == '/analysis'">
+                    Analysa
+                </a>
+            </li>
+        </ul>
+    </nav>
+</div>

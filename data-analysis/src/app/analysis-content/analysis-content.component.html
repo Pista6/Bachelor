@@ -1,1 +1,50 @@
-Nazdar
+<div class="options-div">
+
+  <!-- <mat-form-field>
+        <mat-select placeholder="Favorite food">
+          <mat-option *ngFor="let food of foods" [value]="food.value">
+            {{food.viewValue}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field> -->
+<div class="div-radio">
+  <h4>Basic radio</h4>
+  <mat-radio-group>
+    <mat-radio-button class="radio-cisco" value="1">Cisco</mat-radio-button>
+    <mat-radio-button class="radio-bitcoin" value="2">Bitcoin</mat-radio-button>
+  </mat-radio-group>
+</div>
+
+<div class="div-option">
+  <h4>Basic options</h4>
+  <mat-form-field>
+    <select matNativeControl required>
+      <option value="volvo">Option 1</option>
+      <option value="saab">Option 1</option>
+      <option value="mercedes">Option 1</option>
+    </select>
+  </mat-form-field>
+</div>
+
+  <div class="div-date-from">
+    <h4>Basic </h4>
+    <label class="label-from">Od:</label>
+    <mat-form-field color="accent">
+      <mat-label>Inherited calendar color</mat-label>
+      <input matInput [matDatepicker]="picker1">
+      <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+      <mat-datepicker #picker1></mat-datepicker>
+    </mat-form-field>
+  </div>
+
+  <div class="div-date-to">
+    <label class="label-to">Do:</label>
+    <mat-form-field color="accent">
+      <mat-label>Custom calendar color</mat-label>
+      <input matInput [matDatepicker]="picker2">
+      <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+      <mat-datepicker #picker2 color="primary"></mat-datepicker>
+    </mat-form-field>
+  </div>
+
+</div>

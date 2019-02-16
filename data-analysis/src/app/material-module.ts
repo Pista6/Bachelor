@@ -10,7 +10,7 @@ MatDatepickerModule,MatIconModule,MatButtonModule,MatCheckboxModule, MatToolbarM
 
 })
 
-export  class  MyMaterialModule { }
+export  class  AngularMaterialModule { }
 
 
 /**  Copyright 2018 Google Inc. All Rights Reserved.
