@@ -1,26 +1,22 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
-export interface Food {
-  value: string;
-  viewValue: string;
-}
+import { Options }    from '../options';
 
 @Component({
   selector: 'app-analysis-content',
   templateUrl: './analysis-content.component.html',
   styleUrls: ['./analysis-content.component.css']
 })
-export class AnalysisContentComponent implements OnInit {
+export class AnalysisContentComponent {
 
-  foods: Food[] = [
-    {value: 'steak-0', viewValue: 'Steak'},
-    {value: 'pizza-1', viewValue: 'Pizza'},
-    {value: 'tacos-2', viewValue: 'Tacos'}
-  ];
+  model = new Options('', '', '', '');
 
-  constructor() { }
-
-  ngOnInit() {
+  onSubmit() { 
+    console.log(JSON.stringify(this.model))
+    
   }
+
+  // TODO: Remove this when we're done
+  get diagnostic() { return JSON.stringify(this.model); }
 
 }

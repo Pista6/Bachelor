@@ -4,10 +4,11 @@
     border: 2px solid black;
 }
 
-.mat-radio-button ~ .mat-radio-button {
-    margin-left: 16px;
-  }
-
   .label-from, .label-to{
       padding-right: 10px;
+  }
+
+  .container{
+      margin-left: 70px;
+      border: 2px solid black;
   }

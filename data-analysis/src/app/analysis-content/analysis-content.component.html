@@ -1,50 +1,60 @@
-<div class="options-div">
+<div class="container">
+  <div>
+    <h1>Analysis options</h1>
+    <form (ngSubmit)="onSubmit()" #optionsForm="ngForm">
 
-  <!-- <mat-form-field>
-        <mat-select placeholder="Favorite food">
-          <mat-option *ngFor="let food of foods" [value]="food.value">
-            {{food.viewValue}}
-          </mat-option>
-        </mat-select>
-      </mat-form-field> -->
-<div class="div-radio">
-  <h4>Basic radio</h4>
-  <mat-radio-group>
-    <mat-radio-button class="radio-cisco" value="1">Cisco</mat-radio-button>
-    <mat-radio-button class="radio-bitcoin" value="2">Bitcoin</mat-radio-button>
-  </mat-radio-group>
-</div>
+      <div class="form-group">
+        <label for="name">Dataset</label>
+        <mat-form-field>
+          <select matNativeControl required [(ngModel)]="model.dataOption" name="dataOption" #dataOption="ngModel">
+            <option value="data1">Data 1</option>
+            <option value="data2">Data 2</option>
+          </select>
+        </mat-form-field>
+      </div>
 
-<div class="div-option">
-  <h4>Basic options</h4>
-  <mat-form-field>
-    <select matNativeControl required>
-      <option value="volvo">Option 1</option>
-      <option value="saab">Option 1</option>
-      <option value="mercedes">Option 1</option>
-    </select>
-  </mat-form-field>
-</div>
+      <div class="form-group">
+        <label for="power">Functions</label>
+        <mat-form-field>
+          <select matNativeControl [(ngModel)]="model.analysisFunction" name="analysisFunction">
+            <option value="funkcia1">Option 1</option>
+            <option value="funkcia2">Option 2</option>
+            <option value="funkcia3">Option 3</option>
+          </select>
+        </mat-form-field>
+      </div>
 
-  <div class="div-date-from">
-    <h4>Basic </h4>
-    <label class="label-from">Od:</label>
-    <mat-form-field color="accent">
-      <mat-label>Inherited calendar color</mat-label>
-      <input matInput [matDatepicker]="picker1">
-      <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
-      <mat-datepicker #picker1></mat-datepicker>
-    </mat-form-field>
+      <div class="form-group">
+        <label for="name">Start date:</label>
+        <mat-form-field color="accent">
+          <mat-label>Inherited calendar color</mat-label>
+          <input matInput [matDatepicker]="picker1" [(ngModel)]="model.startDate" name="startDate">
+          <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+          <mat-datepicker #picker1></mat-datepicker>
+        </mat-form-field>
+      </div>
+
+      <div class="form-group">
+        <label for="alterEgo">End date</label>
+        <mat-form-field color="accent">
+          <mat-label>Custom calendar color</mat-label>
+          <input matInput [matDatepicker]="picker2" [(ngModel)]="model.endDate" name="endDate">
+          <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+          <mat-datepicker #picker2 color="primary"></mat-datepicker>
+        </mat-form-field>
+      </div>
+
+      <button type="submit" class="btn btn-success" [disabled]="!optionsForm.form.valid">Submit</button>
+
+    </form>
   </div>
 
-  <div class="div-date-to">
-    <label class="label-to">Do:</label>
-    <mat-form-field color="accent">
-      <mat-label>Custom calendar color</mat-label>
-      <input matInput [matDatepicker]="picker2">
-      <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
-      <mat-datepicker #picker2 color="primary"></mat-datepicker>
-    </mat-form-field>
-  </div>
+  <!-- <div class="container2">
+    <h1>Diacnozis</h1>
+    {{diagnostic}}
+    <br>
+    {{model.endDate}}
+    {{model.startDate}}
+  </div> -->
 
 </div>
