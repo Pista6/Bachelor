@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-
 import { Options }    from '../options';
+import { OptionsService } from '../options.service';
 
 @Component({
   selector: 'app-analysis-content',
@@ -10,13 +10,21 @@ import { Options }    from '../options';
 export class AnalysisContentComponent {
 
   model = new Options('', '', '', '');
+  dataFromServer: Object;
+  heroes: Object;
 
-  onSubmit() { 
-    console.log(JSON.stringify(this.model))
-    
-  }
+  constructor(private optionService: OptionsService){  }
 
   // TODO: Remove this when we're done
   get diagnostic() { return JSON.stringify(this.model); }
 
+
+  getData():void { 
+    console.log(JSON.stringify(this.model));
+    // var jsonForm = JSON.stringify(this.model);
+    // this.optionService.getData(this.model.dataOption, jsonForm).subscribe();
+    this.optionService.getData(this.model.dataOption)
+    .subscribe(data => this.dataFromServer = data);
+    // console.log(JSON.stringify(this.model));
+  }
 }

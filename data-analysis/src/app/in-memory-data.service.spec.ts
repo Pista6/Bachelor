@@ -1,12 +1,12 @@
 import { TestBed } from '@angular/core/testing';
 
-import { BitcoinDataService } from './bitcoin-data.service';
+import { InMemoryDataService } from './in-memory-data.service';
 
-describe('BitcoinDataService', () => {
+describe('InMemoryDataService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {
-    const service: BitcoinDataService = TestBed.get(BitcoinDataService);
+    const service: InMemoryDataService = TestBed.get(InMemoryDataService);
     expect(service).toBeTruthy();
   });
 });

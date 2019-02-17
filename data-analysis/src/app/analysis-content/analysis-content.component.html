@@ -1,14 +1,15 @@
 <div class="container">
   <div>
     <h1>Analysis options</h1>
-    <form (ngSubmit)="onSubmit()" #optionsForm="ngForm">
+    <form (ngSubmit)="getData()" #optionsForm="ngForm">
 
       <div class="form-group">
         <label for="name">Dataset</label>
         <mat-form-field>
           <select matNativeControl required [(ngModel)]="model.dataOption" name="dataOption" #dataOption="ngModel">
-            <option value="data1">Data 1</option>
-            <option value="data2">Data 2</option>
+            <option value="cisco">Cisco</option>
+            <option value="bitcoin">Bitcoin</option>
+            <option value="heroes">Heroes</option>
           </select>
         </mat-form-field>
       </div>
@@ -56,5 +57,12 @@
     {{model.endDate}}
     {{model.startDate}}
   </div> -->
+
+  <div class="container2">
+    <h1>Diacnozis</h1>
+    <li *ngFor="let dataRow of dataFromServer">
+        <span>{{ dataRow.Date }}</span>
+    </li>
+  </div>
 
 </div>

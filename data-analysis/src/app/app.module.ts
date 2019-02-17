@@ -4,6 +4,11 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
+import { CiscoDataService }  from './cisco-data.service';
+import { BitcoinDataService }  from './bitcoin-data.service';
+
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { InMemoryDataService }  from './in-memory-data.service';
 
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MatNativeDateModule} from '@angular/material';
@@ -20,7 +25,7 @@ import { AngularMaterialModule } from  './material-module';
     AppComponent,
     MainContentComponent,
     AnalysisContentComponent,
-    SidebarComponent,
+    SidebarComponent
   ],
   imports: [
     BrowserModule, 
@@ -29,6 +34,11 @@ import { AngularMaterialModule } from  './material-module';
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
+
+    HttpClientInMemoryWebApiModule.forRoot(
+      InMemoryDataService, { dataEncapsulation: false },
+    ),
+
     HttpClientModule,
     MatNativeDateModule,
     ReactiveFormsModule,
