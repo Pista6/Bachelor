@@ -9,7 +9,6 @@
           <select matNativeControl required [(ngModel)]="model.dataOption" name="dataOption" #dataOption="ngModel">
             <option value="cisco">Cisco</option>
             <option value="bitcoin">Bitcoin</option>
-            <option value="heroes">Heroes</option>
           </select>
         </mat-form-field>
       </div>
@@ -59,7 +58,7 @@
   </div> -->
 
   <div class="container2">
-    <h1>Diacnozis</h1>
+    <h1>Data from server</h1>
     <li *ngFor="let dataRow of dataFromServer">
         <span>{{ dataRow.Date }}</span>
     </li>

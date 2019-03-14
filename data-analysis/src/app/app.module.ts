@@ -4,8 +4,8 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
-import { CiscoDataService }  from './cisco-data.service';
-import { BitcoinDataService }  from './bitcoin-data.service';
+// import { CiscoDataService }  from './cisco-data.service';
+// import { BitcoinDataService }  from './bitcoin-data.service';
 
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService }  from './in-memory-data.service';

@@ -13,9 +13,6 @@ const httpOptions = {
 })
 export class OptionsService {
 
-  // dataCisco = "api/cisco";
-  // dataBitcoin = "api/bitcoin";
-
   constructor(private http: HttpClient) { }
 
   // getData(dataURL: string, options: string): Observable<Object> {
@@ -26,9 +23,10 @@ export class OptionsService {
   //     catchError(this.handleError('getHeroes', []))
   //   );
   // }
-    getData(optionData: string): Observable<Object>{
+
+    getData(optionData: string): Observable<JSON>{
       // return this.http.get<Object>('api/' + option);
-      return this.http.get<Object>('api/'+ optionData);
+      return this.http.get<JSON>('api/'+ optionData);
 
     }
 

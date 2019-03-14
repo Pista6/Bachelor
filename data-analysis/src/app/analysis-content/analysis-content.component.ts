@@ -10,8 +10,7 @@ import { OptionsService } from '../options.service';
 export class AnalysisContentComponent {
 
   model = new Options('', '', '', '');
-  dataFromServer: Object;
-  heroes: Object;
+  dataFromServer: JSON;
 
   constructor(private optionService: OptionsService){  }
 
@@ -21,10 +20,8 @@ export class AnalysisContentComponent {
 
   getData():void { 
     console.log(JSON.stringify(this.model));
-    // var jsonForm = JSON.stringify(this.model);
     // this.optionService.getData(this.model.dataOption, jsonForm).subscribe();
     this.optionService.getData(this.model.dataOption)
     .subscribe(data => this.dataFromServer = data);
-    // console.log(JSON.stringify(this.model));
   }
 }
