@@ -14,18 +14,13 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MatNativeDateModule} from '@angular/material';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
-import { MainContentComponent } from './main-content/main-content.component';
 import { AnalysisContentComponent } from './analysis-content/analysis-content.component';
-import { SidebarComponent } from './sidebar/sidebar.component';
-
 import { AngularMaterialModule } from  './material-module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MainContentComponent,
     AnalysisContentComponent,
-    SidebarComponent
   ],
   imports: [
     BrowserModule, 
