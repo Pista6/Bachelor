@@ -1,11 +1,15 @@
+import '../polyfills';
+
+
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
-// import { CiscoDataService }  from './cisco-data.service';
-// import { BitcoinDataService }  from './bitcoin-data.service';
+
+import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
+
 
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService }  from './in-memory-data.service';
@@ -16,11 +20,16 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 import { AnalysisContentComponent } from './analysis-content/analysis-content.component';
 import { AngularMaterialModule } from  './material-module';
+import { DataChartsComponent } from './data-charts/data-charts.component';
+
+import { PlotlyModule } from 'angular-plotly.js';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     AnalysisContentComponent,
+    DataChartsComponent,
   ],
   imports: [
     BrowserModule, 
@@ -29,6 +38,7 @@ import { AngularMaterialModule } from  './material-module';
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
+    PlotlyModule,
 
     HttpClientInMemoryWebApiModule.forRoot(
       InMemoryDataService, { dataEncapsulation: false },
@@ -42,3 +52,6 @@ import { AngularMaterialModule } from  './material-module';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+platformBrowserDynamic().bootstrapModule(AppModule);
+
