@@ -24,9 +24,9 @@ export class OptionsService {
   //   );
   // }
 
-    getData(optionData: string): Observable<JSON>{
+    getData(optionData: string): Observable<Options>{
       // return this.http.get<Object>('api/' + option);
-      return this.http.get<JSON>('api/'+ optionData);
+      return this.http.get<Options>('api/'+ optionData);
 
     }
 

@@ -10,13 +10,12 @@ import { OptionsService } from '../options.service';
 export class AnalysisContentComponent {
 
   model = new Options('', '', '', '');
-  dataFromServer: JSON;
+  dataFromServer: Options;
 
   constructor(private optionService: OptionsService){  }
 
   // TODO: Remove this when we're done
   get diagnostic() { return JSON.stringify(this.model); }
-
 
   getData():void { 
     console.log(JSON.stringify(this.model));
