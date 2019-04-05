@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Options }    from '../options';
 import { OptionsService } from '../options.service';
+import { DataFromServer } from '../dataFromServer';
 
 
 @Component({
@@ -13,7 +14,7 @@ export class AnalysisContentComponent {
 
   showDataComponent: boolean = false;
   model = new Options('', '', '', '');
-  public dataFromServer: Options;
+  public dataFromServer: DataFromServer[];
 
   constructor(private optionService: OptionsService){  }
 
@@ -24,11 +25,8 @@ export class AnalysisContentComponent {
     console.log(JSON.stringify(this.model));
     // this.optionService.getData(this.model.dataOption, jsonForm).subscribe();
     this.optionService.getData(this.model.dataOption)
-    .subscribe(data => this.dataFromServer = data);
+      .subscribe(data => this.dataFromServer = data);
     this.showDataComponent = true;
   }
 }
 
-export class ExpansionOverviewExample {
-  panelOpenState = false;
-}

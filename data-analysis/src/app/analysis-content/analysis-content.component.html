@@ -49,28 +49,13 @@
     </form>
   </div>
 
-  <!-- <div class="container2">
-    <h1>Test Json</h1>
-    {{diagnostic}}
-    <br>
-    {{model.endDate}}
-    {{model.startDate}}
-  </div>
-
-  <div class="container2">
-    <h1>Data from server</h1>
-    <li *ngFor="let dataRow of dataFromServer">
-        <span>{{ dataRow.Date }}</span>
-    </li>
-  </div> -->
-
 </div>
 
-<app-data-charts [showDataChartComponent] = "showDataComponent"></app-data-charts>
+<app-data-charts [dataFromServer]="dataFromServer" [showDataChartComponent] = "showDataComponent"></app-data-charts>
 
 
-<!-- 
-<mat-accordion>
+
+<!-- <mat-accordion>
   <mat-expansion-panel>
     <mat-expansion-panel-header>
       <mat-panel-title>

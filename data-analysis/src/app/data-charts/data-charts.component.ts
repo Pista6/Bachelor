@@ -1,5 +1,5 @@
-import { Component, ViewChild, AfterViewInit, Input } from '@angular/core';
-import { AnalysisContentComponent } from '../analysis-content/analysis-content.component';
+import { Component, Input } from '@angular/core';
+import { DataFromServer } from '../dataFromServer';
 
 @Component({
   selector: 'app-data-charts',
@@ -8,24 +8,43 @@ import { AnalysisContentComponent } from '../analysis-content/analysis-content.c
 })
 export class DataChartsComponent {
 
-  @ViewChild(AnalysisContentComponent) analysisContentComponent: any;
   @Input() showDataChartComponent: boolean;
-
+  @Input() dataFromServer: DataFromServer[];
 
   constructor() { }
 
   public graph;
+  public x: Date[] = [];
+  public y: number[] = [];
 
   ngOnInit() {
-    this.graph = {
-      data: [
-        { x: [1, 2, 3], y: [2, 6, 3], type: 'scatter', mode: 'lines+points', marker: { color: 'red' } },
-        { x: [1, 2, 3], y: [2, 5, 3], type: 'bar' },
-      ],
-      layout: { width: 320, height: 240, title: 'A Fancy Plot' }
-    };
+
+  }
+  
+  ngOnChanges()	{
+    if(this.showDataChartComponent){
+      console.log("We are here.");
+      this.x = [];
+      this.y = [];
+      this.dataFromServer.map(
+        dataEntry => {
+          this.x.push(dataEntry.Date);
+          this.y.push(dataEntry.Open);
+        }
+      )
+      this.showSomething()
+    }
   }
 
+  showSomething() {
+    this.graph = {
+      data: [
+        { x: this.x, y: this.y , type: 'scatter', mode: 'lines+points', marker: { color: 'red' } },
+      ],
+    };
+    
+  }
 
+  
 
 }
