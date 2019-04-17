@@ -1,89 +1,68 @@
 <div class="container">
-  <div>
     <h1>Analysis options</h1>
     <form (ngSubmit)="getData()" #optionsForm="ngForm">
 
-      <div class="form-group">
-        <label for="name">Dataset</label>
-        <mat-form-field>
-          <select matNativeControl required [(ngModel)]="model.dataOption" name="dataOption" #dataOption="ngModel">
-            <option value="cisco">Cisco</option>
-            <option value="bitcoin">Bitcoin</option>
-          </select>
-        </mat-form-field>
-      </div>
+      <mat-accordion class="example-headers-align">
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Functional data
+            </mat-panel-title>
+            <mat-panel-description>
+              Choose from form.
+              <!-- <mat-icon>account_circle</mat-icon> -->
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+      
+          <mat-form-field>
+            <mat-label>Select an data option</mat-label>
+            <mat-select required [(ngModel)]="formularOptions.dataOption" name="dataOption">
+              <mat-option>None</mat-option>
+              <mat-option value="cisco">Cisco</mat-option>
+              <mat-option value="bitcoin">Bitcoin</mat-option>
+            </mat-select>
+          </mat-form-field>
+      
+          <mat-form-field>
+            <mat-label>Select an function</mat-label>
+            <mat-select required [(ngModel)]="formularOptions.analysisFunction" name="analysisFunction">
+              <mat-option>None</mat-option>
+              <mat-option value="coleration">Coleration</mat-option>
+              <mat-option value="statistics">Statistics</mat-option>
+              <mat-option value="regression">Regression</mat-option>
+            </mat-select>
+          </mat-form-field>
+      
+        </mat-expansion-panel>
+      
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Day pickers
+            </mat-panel-title>
+            <mat-panel-description>
+              Inform the date you wish to travel
+              <mat-icon>date_range</mat-icon>
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <mat-form-field>
+            <input matInput required [matDatepicker]="picker2" placeholder="Value binding" [(ngModel)]="formularOptions.startDate" name="startDate">
+            <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+            <mat-datepicker #picker2></mat-datepicker>
+          </mat-form-field>
+          
+          <mat-form-field>
+            <input matInput required [matDatepicker]="picker3" placeholder="Value binding" [(ngModel)]="formularOptions.endDate" name="endDate">
+            <mat-datepicker-toggle matSuffix [for]="picker3"></mat-datepicker-toggle>
+            <mat-datepicker #picker3></mat-datepicker>
+          </mat-form-field>
 
-      <div class="form-group">
-        <label for="power">Functions</label>
-        <mat-form-field>
-          <select matNativeControl [(ngModel)]="model.analysisFunction" name="analysisFunction">
-            <option value="funkcia1">Option 1</option>
-            <option value="funkcia2">Option 2</option>
-            <option value="funkcia3">Option 3</option>
-          </select>
-        </mat-form-field>
-      </div>
-
-      <div class="form-group">
-        <label for="name">Start date:</label>
-        <mat-form-field>
-          <mat-label>Inherited calendar color</mat-label>
-          <input matInput [matDatepicker]="picker1" [(ngModel)]="model.startDate" name="startDate">
-          <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
-          <mat-datepicker #picker1></mat-datepicker>
-        </mat-form-field>
-      </div>
-
-      <div class="form-group">
-        <label for="alterEgo">End date</label>
-        <mat-form-field>
-          <mat-label>Custom calendar color</mat-label>
-          <input matInput [matDatepicker]="picker2" [(ngModel)]="model.endDate" name="endDate">
-          <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
-          <mat-datepicker #picker2 color="primary"></mat-datepicker>
-        </mat-form-field>
-      </div>
-
+        </mat-expansion-panel>      
+      </mat-accordion>
       <button type="submit" class="btn btn-success" [disabled]="!optionsForm.form.valid">Submit</button>
 
     </form>
-  </div>
 
 </div>
 
 <app-data-charts [dataFromServer]="dataFromServer" [showDataChartComponent] = "showDataComponent"></app-data-charts>
-
-
-
-<!-- <mat-accordion>
-  <mat-expansion-panel>
-    <mat-expansion-panel-header>
-      <mat-panel-title>
-        Personal data
-      </mat-panel-title>
-      <mat-panel-description>
-        Type your name and age
-      </mat-panel-description>
-    </mat-expansion-panel-header>
-
-    <mat-form-field>
-      <input matInput placeholder="First name">
-    </mat-form-field>
-
-    <mat-form-field>
-      <input matInput placeholder="Age">
-    </mat-form-field>
-  </mat-expansion-panel>
-  <mat-expansion-panel (opened)="panelOpenState = true"
-                       (closed)="panelOpenState = false">
-    <mat-expansion-panel-header>
-      <mat-panel-title>
-        Self aware panel
-      </mat-panel-title>
-      <mat-panel-description>
-        Currently I am {{panelOpenState ? 'open' : 'closed'}}
-      </mat-panel-description>
-    </mat-expansion-panel-header>
-    <p>I'm visible because I am open</p>
-  </mat-expansion-panel>
-</mat-accordion> -->
