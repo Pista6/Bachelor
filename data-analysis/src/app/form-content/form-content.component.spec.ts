@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DataChartsComponent } from './data-charts.component';
+import { FormContentComponent } from './form-content.component';
 
-describe('DataChartsComponent', () => {
-  let component: DataChartsComponent;
-  let fixture: ComponentFixture<DataChartsComponent>;
+describe('FormContentComponent', () => {
+  let component: FormContentComponent;
+  let fixture: ComponentFixture<FormContentComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ DataChartsComponent ]
+      declarations: [ FormContentComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(DataChartsComponent);
+    fixture = TestBed.createComponent(FormContentComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

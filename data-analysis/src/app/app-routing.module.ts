@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { AnalysisContentComponent } from './analysis-content/analysis-content.component'
+import { FormContentComponent } from './form-content/form-content.component'
 
 const routes: Routes = [
   {
     path: '',
-    component: AnalysisContentComponent
+    component: FormContentComponent
   },
 ];
 

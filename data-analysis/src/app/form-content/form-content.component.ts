@@ -4,12 +4,11 @@ import { OptionsService } from '../options.service';
 import { DataFromServer } from '../dataFromServer';
 
 @Component({
-  selector: 'app-analysis-content',
-  templateUrl: './analysis-content.component.html',
-  styleUrls: ['./analysis-content.component.css']
+  selector: 'app-form-content',
+  templateUrl: './form-content.component.html',
+  styleUrls: ['./form-content.component.css']
 })
-
-export class AnalysisContentComponent {
+export class FormContentComponent {
 
   formFunction: string;
   formDataset: string;
@@ -43,5 +42,5 @@ export class AnalysisContentComponent {
     this.formularOptions.startDate = formatted_start_date;
     this.formularOptions.endDate = formatted_end_date;
   };
-}
 
+}

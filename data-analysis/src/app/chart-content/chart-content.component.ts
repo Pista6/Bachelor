@@ -2,11 +2,11 @@ import { Component, Input } from '@angular/core';
 import { DataFromServer } from '../dataFromServer';
 
 @Component({
-  selector: 'app-data-charts',
-  templateUrl: './data-charts.component.html',
-  styleUrls: ['./data-charts.component.css']
+  selector: 'app-chart-content',
+  templateUrl: './chart-content.component.html',
+  styleUrls: ['./chart-content.component.css']
 })
-export class DataChartsComponent {
+export class ChartContentComponent {
 
   @Input() showDataChartComponent: boolean;
   @Input() dataFromServer: DataFromServer[];
@@ -45,6 +45,6 @@ export class DataChartsComponent {
     
   }
 
-  
+
 
 }

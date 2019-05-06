@@ -1,0 +1,100 @@
+<div class="container">
+  <h1>Formulár pre analýzu</h1>
+  <form (ngSubmit)="getData()" #optionsForm="ngForm">
+
+    <mat-accordion class="example-headers-align">
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            
+          </mat-panel-title>
+          <mat-panel-description>
+            V tejto časti formuláru vyberte dataset a funkciu vykonanú nad datasetom.
+            <mat-icon>insert_chart_outlined</mat-icon>
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+    
+        <!-- <mat-form-field>
+          <mat-label>Select an data option</mat-label>
+          <mat-select required [(ngModel)]="formularOptions.dataOption" name="dataOption">
+            <mat-option>None</mat-option>
+            <mat-option value="cisco">Cisco</mat-option>
+            <mat-option value="bitcoin">Bitcoin</mat-option>
+          </mat-select>
+        </mat-form-field>
+    
+        <mat-form-field>
+          <mat-label>Select an function</mat-label>
+          <mat-select required [(ngModel)]="formularOptions.analysisFunction" name="analysisFunction">
+            <mat-option>None</mat-option>
+            <mat-option value="coleration">Coleration</mat-option>
+            <mat-option value="statistics">Statistics</mat-option>
+            <mat-option value="regression">Regression</mat-option>
+          </mat-select>
+        </mat-form-field> -->
+
+        <mat-form-field>
+          <mat-label>Vyberte dáta...</mat-label>
+          <mat-select required [(ngModel)]="formDataset" name="formDataset">
+            <mat-option>None</mat-option>
+            <mat-option value="cisco">Cisco</mat-option>
+            <mat-option value="bitcoin">Bitcoin</mat-option>
+          </mat-select>
+        </mat-form-field>
+    
+        <mat-form-field>
+          <mat-label>Vyberte funkciu...</mat-label>
+          <mat-select required [(ngModel)]="formFunction" name="formFunction">
+            <mat-option>None</mat-option>
+            <mat-option value="coleration">Coleration</mat-option>
+            <mat-option value="statistics">Statistics</mat-option>
+            <mat-option value="regression">Regression</mat-option>
+          </mat-select>
+        </mat-form-field>
+    
+      </mat-expansion-panel>
+    
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            
+          </mat-panel-title>
+          <mat-panel-description>
+            Vyberte časový interval, v ktorom chcete vykonať výpočet.
+            <mat-icon>date_range</mat-icon>
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <!-- <mat-form-field>
+          <input matInput required [matDatepicker]="picker2" placeholder="Value binding" [(ngModel)]="formularOptions.startDate" name="startDate">
+          <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+          <mat-datepicker #picker2></mat-datepicker>
+        </mat-form-field>
+        
+        <mat-form-field>
+          <input matInput required [matDatepicker]="picker3" placeholder="Value binding" [(ngModel)]="formularOptions.endDate" name="endDate">
+          <mat-datepicker-toggle matSuffix [for]="picker3"></mat-datepicker-toggle>
+          <mat-datepicker #picker3></mat-datepicker>
+        </mat-form-field> -->
+
+        <mat-form-field>
+          <input matInput required [matDatepicker]="picker2" placeholder="Value binding" [(ngModel)]="formStartDate" name="formStartDate">
+          <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+          <mat-datepicker #picker2></mat-datepicker>
+        </mat-form-field>
+        
+        <mat-form-field>
+          <input matInput required [matDatepicker]="picker3" placeholder="Value binding" [(ngModel)]="formEndDate" name="formEndDate">
+          <mat-datepicker-toggle matSuffix [for]="picker3"></mat-datepicker-toggle>
+          <mat-datepicker #picker3></mat-datepicker>
+        </mat-form-field>
+
+      </mat-expansion-panel>      
+    </mat-accordion>
+
+    <button type="submit" mat-raised-button color="primary" [disabled]="!optionsForm.form.valid">Submit</button>
+
+  </form>
+
+</div>
+
+<app-chart-content [dataFromServer]="dataFromServer" [showDataChartComponent] = "showDataComponent"></app-chart-content>
