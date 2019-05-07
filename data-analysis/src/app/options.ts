@@ -6,8 +6,8 @@ export class Options {
   // public endDate: Date;
   
 
-  public dataOption: string;
-  public analysisFunction: string;
+  public dataset: string;
+  public algorithm: string;
   public startDate: string;
   public endDate: string;
 }

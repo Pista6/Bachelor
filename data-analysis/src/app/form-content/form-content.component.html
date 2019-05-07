@@ -38,7 +38,7 @@
           <mat-select required [(ngModel)]="formDataset" name="formDataset">
             <mat-option>None</mat-option>
             <mat-option value="cisco">Cisco</mat-option>
-            <mat-option value="bitcoin">Bitcoin</mat-option>
+            <mat-option value="BTC-USD.csv">Bitcoin</mat-option>
           </mat-select>
         </mat-form-field>
     
@@ -46,7 +46,7 @@
           <mat-label>Vyberte funkciu...</mat-label>
           <mat-select required [(ngModel)]="formFunction" name="formFunction">
             <mat-option>None</mat-option>
-            <mat-option value="coleration">Coleration</mat-option>
+            <mat-option value="correlation">Correlation</mat-option>
             <mat-option value="statistics">Statistics</mat-option>
             <mat-option value="regression">Regression</mat-option>
           </mat-select>
@@ -97,4 +97,4 @@
 
 </div>
 
-<app-chart-content [dataFromServer]="dataFromServer" [showDataChartComponent] = "showDataComponent"></app-chart-content>
+<app-chart-content [chartType] = "chartType" [dataFromServer]="dataFromServer" [showDataChartComponent] = "showDataComponent"></app-chart-content>

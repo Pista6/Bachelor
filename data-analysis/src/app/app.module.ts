@@ -39,9 +39,9 @@ import { ChartContentComponent } from './chart-content/chart-content.component';
     FormsModule,
     PlotlyModule,
 
-    HttpClientInMemoryWebApiModule.forRoot(
-      InMemoryDataService, { dataEncapsulation: false },
-    ),
+    // HttpClientInMemoryWebApiModule.forRoot(
+    //   InMemoryDataService, { dataEncapsulation: false },
+    // ),
 
     HttpClientModule,
     MatNativeDateModule,
