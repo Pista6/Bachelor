@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { Options } from '../options';
 import { OptionsService } from '../options.service';
-import { DataFromServer } from '../dataFromServer';
 
 @Component({
   selector: 'app-form-content',

@@ -1,0 +1,129 @@
+<div class="container">
+  
+  <div class="info-container">
+    <h1>Bakalárska Práca</h1>
+    <p>
+      Vitajte na stránke venovanej bakalárskej práci pre analýzu finančných dát. Tato stránka slúži
+      na grafické zobrazenie dát z navoleného formulára a funkcií vykonaných za pomoci
+      funkcionálneho programovacieho jazyka na strane back-endu.
+    </p>
+
+    <p>Predtým ako začnete pracovať, prečitajte si zopár informácii o priloženom formuláre a výsledných grafoch.</p>
+    <div id="list2">
+      <ol>
+        <li><p>Pre úspešne odoslanie formulára je potrebné vyplniť všetky polia formulára.</p></li>
+        <li><p>Výber dát je možný len z dvoch datasetov: Cisco Systems a Inc. (CSCO), Bitcoin USD (BTC-USD)</p></li>
+        <li><p>Popis funkcií vykonávanych nad dátami:</p>
+          <ul>
+            <li><p>
+              Lineárna regresia: zobrazí priamku, ktorá najlepšie kopíruje dáta (konkrétne najnižsie denné akcie a akcie
+              na konci dňa).
+            </p></li>
+            <li><p>
+              Štatistika: zobrazí histogram hodnôt za za zvolené obdobie (konkrétne najnižšie denné akcie).
+            </p></li>
+            <li><p>
+              Korelácia: zobrazí 3D graf závislostí dát (medzi všetkými akciami).
+            </p></li>
+          </ul>
+        </li>
+        <li><p>Rozsah dát je pre každý dataset rôzny:</p>
+          <ul>
+            <li><p>
+              Cisco Systems a Inc. (CSCO): 31.12.1997 - 31.12.2018
+            </p></li>
+            <li><p>
+              Bitcoin USD (BTC-USD): 30.12.2010 - 31.12.2018
+            </p></li>
+          </ul>
+        </li>
+      </ol>
+    </div>
+  </div>
+
+  <form (ngSubmit)="getData()" #optionsForm="ngForm">
+    <h1>Formulár pre analýzu</h1>
+    <mat-accordion class="example-headers-align">
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+
+          </mat-panel-title>
+          <mat-panel-description>
+            V tejto časti formuláru vyberte dataset a funkciu vykonanú nad datasetom.
+            <mat-icon>insert_chart_outlined</mat-icon>
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+
+        <mat-form-field>
+          <mat-label>Vyberte dáta...</mat-label>
+          <mat-select required [(ngModel)]="formDataset" name="formDataset">
+            <mat-option>None</mat-option>
+            <mat-option value="cisco.csv">Cisco</mat-option>
+            <mat-option value="btc.csv">Bitcoin</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Vyberte funkciu...</mat-label>
+          <mat-select required [(ngModel)]="formFunction" name="formFunction">
+            <mat-option>None</mat-option>
+            <mat-option value="correlationMatrix">Correlation</mat-option>
+            <mat-option value="histogram">Statistics</mat-option>
+            <mat-option value="regression">Regression</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+      </mat-expansion-panel>
+
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+
+          </mat-panel-title>
+          <mat-panel-description>
+            Vyberte časový interval, v ktorom chcete vykonať výpočet.
+            <mat-icon>date_range</mat-icon>
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <!-- <mat-form-field>
+          <input matInput required [matDatepicker]="picker2" placeholder="Value binding" [(ngModel)]="formularOptions.startDate" name="startDate">
+          <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+          <mat-datepicker #picker2></mat-datepicker>
+        </mat-form-field>
+        
+        <mat-form-field>
+          <input matInput required [matDatepicker]="picker3" placeholder="Value binding" [(ngModel)]="formularOptions.endDate" name="endDate">
+          <mat-datepicker-toggle matSuffix [for]="picker3"></mat-datepicker-toggle>
+          <mat-datepicker #picker3></mat-datepicker>
+        </mat-form-field> -->
+
+        <mat-form-field>
+          <input matInput required [matDatepicker]="picker2" placeholder="Value binding" [(ngModel)]="formStartDate"
+            name="formStartDate">
+          <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+          <mat-datepicker #picker2></mat-datepicker>
+        </mat-form-field>
+
+        <mat-form-field>
+          <input matInput required [matDatepicker]="picker3" placeholder="Value binding" [(ngModel)]="formEndDate"
+            name="formEndDate">
+          <mat-datepicker-toggle matSuffix [for]="picker3"></mat-datepicker-toggle>
+          <mat-datepicker #picker3></mat-datepicker>
+        </mat-form-field>
+
+      </mat-expansion-panel>
+    </mat-accordion>
+
+    <button type="submit" mat-raised-button color="primary" [disabled]="!optionsForm.form.valid">Submit</button>
+
+  </form>
+
+</div>
+
+<app-chart-content [chartType]="chartType" [dataFromServer]="dataFromServer"
+  [showDataChartComponent]="showDataComponent"></app-chart-content>
+
+  <footer>
+    <p id="footer">© Štefan Daňo</p>
+  </footer>

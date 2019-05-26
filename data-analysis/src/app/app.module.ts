@@ -1,6 +1,5 @@
 import '../polyfills';
 
-
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -31,7 +30,6 @@ import { ChartContentComponent } from './chart-content/chart-content.component';
     ChartContentComponent,
   ],
   imports: [
-    BrowserModule, 
     AppRoutingModule,
     AngularMaterialModule,
     BrowserModule,
